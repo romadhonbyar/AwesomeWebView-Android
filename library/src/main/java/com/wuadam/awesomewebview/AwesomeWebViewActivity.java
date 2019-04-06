@@ -229,7 +229,8 @@ public class AwesomeWebViewActivity extends AppCompatActivity
     protected ValueCallback<Uri> filePickerFileMessage;
     protected ValueCallback<Uri[]> filePickerFilePath;
     protected final static int FILE_PICKER_REQ_CODE = 1;
-    protected String FILE_TYPE = "*/*";
+    //protected String FILE_TYPE = "*/*";
+    protected String FILE_TYPE = "image/*";
 
     protected String injectJavaScript;
     protected Boolean injectJavaScriptMainPage;
