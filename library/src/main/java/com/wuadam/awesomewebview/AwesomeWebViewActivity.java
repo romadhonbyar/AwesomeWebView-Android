@@ -1483,6 +1483,8 @@ public class AwesomeWebViewActivity extends AppCompatActivity
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 contentSelectionIntent.putExtra(Intent.EXTRA_MIME_TYPES, fileChooserParams.getAcceptTypes());
             }
+            
+            /*
             Intent[] intentArray;
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if (takePictureIntent.resolveActivity(AwesomeWebViewActivity.this.getPackageManager()) != null) {
@@ -1503,11 +1505,12 @@ public class AwesomeWebViewActivity extends AppCompatActivity
                 intentArray = new Intent[]{takePictureIntent};
             } else {
                 intentArray = new Intent[0];
-            }
+            }*/
+            
             Intent chooserIntent = new Intent(Intent.ACTION_CHOOSER);
             chooserIntent.putExtra(Intent.EXTRA_INTENT, contentSelectionIntent);
             chooserIntent.putExtra(Intent.EXTRA_TITLE, getResources().getString(stringResFileChooserTitle));
-            chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, intentArray);
+            //chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, intentArray);
             startActivityForResult(chooserIntent, FILE_PICKER_REQ_CODE);
             return true;
         }
